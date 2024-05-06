@@ -4,6 +4,7 @@
 ** File description:
 ** requirements.h
 */
+#pragma once
 #include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>

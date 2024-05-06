@@ -5,7 +5,13 @@
 ## Makefile
 ##
 
-SRC = $(shell find src -name "*.c")
+SRC =	src/main.c \
+		src/requirements.c \
+		src/instructions/get_instruction.c \
+		src/tools/str_to_word_array.c \
+		src/instructions/new_employee.c \
+		src/instructions/new_meeting.c \
+
 CFLAGS = -W -Wextra -Wall -g3
 CPPFLAGS = -I src/include
 TARGET = calendar
