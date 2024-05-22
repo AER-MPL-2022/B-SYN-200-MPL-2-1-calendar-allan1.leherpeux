@@ -19,13 +19,20 @@ void new_employee(calendar_t *calendar, char *line)
         free(employee);
         return;
     }
-
     
     employee->firstname = strdup(array[1]);
     employee->lastname = strdup(array[2]);
     employee->position = strdup(array[3]);
     employee->zip_code = strdup(array[4]);
     employee->id = atoi(array[5]);
+
+    for (list_t *tmp = calendar->employees; tmp != NULL; tmp = tmp->next) {
+        if (((employee_t *)tmp->data)->id == employee->id) {
+            printf("Employee id already exists\n");
+            free(employee);
+            return;
+        }
+    }
 
     push_back(&calendar->employees, employee);
 }

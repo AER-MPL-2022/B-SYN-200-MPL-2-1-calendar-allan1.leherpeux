@@ -11,6 +11,9 @@ SRC =	src/main.c \
 		src/tools/str_to_word_array.c \
 		src/instructions/new_employee.c \
 		src/instructions/new_meeting.c \
+		src/instructions/invite.c \
+		src/instructions/exclude.c \
+		src/instructions/fire.c \
 
 CFLAGS = -W -Wextra -Wall -g3
 CPPFLAGS = -I src/include

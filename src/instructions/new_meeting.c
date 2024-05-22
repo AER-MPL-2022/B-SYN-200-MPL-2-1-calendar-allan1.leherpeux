@@ -26,8 +26,31 @@ void new_meeting(calendar_t *calendar, char *line)
     meeting->date = strdup(array[2]);
     meeting->id = atoi(array[3]);
 
+    for (list_t *tmp = calendar->meetings; tmp != NULL; tmp = tmp->next) {
+        if (((meeting_t *)tmp->data)->id == meeting->id) {
+            printf("Meeting id already exists\n");
+            free(meeting);
+            return;
+        }
+    }
+
     for (int i = 4; i < len; i++) {
         tmp = get_employee_by_id(calendar->employees, atoi(array[i]));
+
+        if (tmp == NULL) {
+            printf("Employee not found\n");
+            free(meeting);
+            return;
+        }
+
+        for (list_t *tmp2 = meeting->employees; tmp2 != NULL; tmp2 = tmp2->next) {
+            if (tmp2->data == tmp) {
+                printf("Employee already in the meeting\n");
+                free(meeting);
+                return;
+            }
+        }
+        
         push_back(&meeting->employees, tmp);
     }
 
@@ -40,4 +63,36 @@ void display_meeting(meeting_t *meeting)
     for (list_t *tmp = meeting->employees; tmp != NULL; tmp = tmp->next) {
         display_employee(tmp->data);
     }
+}
+
+meeting_t *get_meeting_by_id(list_t *meetings, int id)
+{
+    for (list_t *tmp = meetings; tmp != NULL; tmp = tmp->next) {
+        if (((meeting_t *)tmp->data)->id == id)
+            return tmp->data;
+    }
+    return NULL;
+}
+
+void remove_employee_by_id(meeting_t *meeting, int id)
+{
+    list_t *tmp = meeting->employees;
+    list_t *prev = NULL;
+
+    if (tmp != NULL && ((employee_t *)tmp->data)->id == id) {
+        meeting->employees = tmp->next;
+        free(tmp);
+        return;
+    }
+
+    while (tmp != NULL && ((employee_t *)tmp->data)->id != id) {
+        prev = tmp;
+        tmp = tmp->next;
+    }
+
+    if (tmp == NULL) {
+        return;
+    }
+    prev->next = tmp->next;
+    free(tmp);
 }

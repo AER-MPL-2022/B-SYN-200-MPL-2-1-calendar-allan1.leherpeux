@@ -55,6 +55,15 @@ int main(void)
         case NEW_MEETING:
             new_meeting(calendar, line);
             break;
+        case INVITE:
+            invite(calendar, line);
+            break;
+        case EXCLUDE:
+            exclude(calendar, line);
+            break;
+        case FIRE:
+            fire(calendar, line);
+            break;
         default:
             break;
         }
