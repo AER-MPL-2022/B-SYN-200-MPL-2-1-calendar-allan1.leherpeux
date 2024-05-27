@@ -20,8 +20,8 @@ void new_employee(calendar_t *calendar, char *line)
         return;
     }
     
-    employee->firstname = strdup(array[1]);
-    employee->lastname = strdup(array[2]);
+    employee->firstname = strdup(array[2]);
+    employee->lastname = strdup(array[1]);
     employee->position = strdup(array[3]);
     employee->zip_code = strdup(array[4]);
     employee->id = atoi(array[5]);

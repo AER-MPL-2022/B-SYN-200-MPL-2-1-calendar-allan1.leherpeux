@@ -14,6 +14,8 @@ SRC =	src/main.c \
 		src/instructions/invite.c \
 		src/instructions/exclude.c \
 		src/instructions/fire.c \
+		src/instructions/employee_info.c \
+		src/instructions/disp_employees.c
 
 CFLAGS = -W -Wextra -Wall -g3
 CPPFLAGS = -I src/include

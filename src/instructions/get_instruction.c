@@ -17,8 +17,9 @@ void get_instruction(calendar_t *calendar, char *line)
         calendar->current_instruction = INVITE;
     else if (strncmp(line, "exclude", 7) == 0)
         calendar->current_instruction = EXCLUDE;
-    else if (strncmp(line, "info_employees", 14) == 0)
+    else if (strncmp(line, "info_employees", 14) == 0) {
         calendar->current_instruction = INFO_EMPLOYEES;
+    }
     else if (strncmp(line, "info_meetings", 13) == 0)
         calendar->current_instruction = INFO_MEETINGS;
     else if (strncmp(line, "cancel", 6) == 0)

@@ -64,12 +64,15 @@ int main(void)
         case FIRE:
             fire(calendar, line);
             break;
+        case INFO_EMPLOYEES:
+            info_employee(calendar, line);
+            break;
         default:
             break;
         }
     }
 
-    display_employees(calendar->employees);
-    display_meetings(calendar->meetings);
+    // display_employees(calendar->employees);
+    // display_meetings(calendar->meetings);
     return 0;
 }

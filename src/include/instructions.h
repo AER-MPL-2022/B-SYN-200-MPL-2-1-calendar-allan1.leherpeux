@@ -20,3 +20,5 @@ void remove_employee_by_id(meeting_t *meeting, int id);
 void invite(calendar_t *calendar, char *line);
 void exclude(calendar_t *calendar, char *line);
 void fire(calendar_t *calendar, char *line);
+void info_employee(calendar_t *calendar, char *line);
+void disp_employees(calendar_t *calendar);
