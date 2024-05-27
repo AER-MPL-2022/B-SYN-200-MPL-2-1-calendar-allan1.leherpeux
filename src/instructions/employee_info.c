@@ -186,27 +186,22 @@ void info_employee(calendar_t *calendar, char *line)
         printf("Invalid arguments\n");
         return;
     }
-
     if (strcmp(array[1], "sortByName") == 0) {
         emp_sbn(calendar);
         return;
     }
-
     if (strcmp(array[1], "sortByForename") == 0) {
         emp_sbf(calendar);
         return;
     }
-
     if (strcmp(array[1], "sortByJob") == 0) {
         emp_sbj(calendar);
         return;
     }
-
     if (strcmp(array[1], "sortByZip") == 0) {
         emp_sbz(calendar);
         return;
     }
-
     if (strcmp(array[1], "sortById") == 0) {
         emp_sbi(calendar);
         return;
