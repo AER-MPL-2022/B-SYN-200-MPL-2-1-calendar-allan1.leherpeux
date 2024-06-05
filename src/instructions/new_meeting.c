@@ -16,7 +16,7 @@ void new_meeting(calendar_t *calendar, char *line)
     int len = get_array_len(array);
 
     if (len < 4) {
-        printf("Invalid arguments\n");
+        fprintf(stderr, "Invalid arguments\n");
         free(meeting);
         return;
     }

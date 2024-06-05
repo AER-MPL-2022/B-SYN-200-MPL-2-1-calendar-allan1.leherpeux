@@ -183,7 +183,7 @@ void info_employee(calendar_t *calendar, char *line)
     char **array = str_to_word_array(line);
 
     if (get_array_len(array) < 2) {
-        printf("Invalid arguments\n");
+        fprintf(stderr, "Invalid arguments\n");
         return;
     }
     if (strcmp(array[1], "sortByName") == 0) {

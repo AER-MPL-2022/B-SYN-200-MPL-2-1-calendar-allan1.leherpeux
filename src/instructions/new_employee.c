@@ -15,7 +15,7 @@ void new_employee(calendar_t *calendar, char *line)
     int len = get_array_len(array);
 
     if (len != 6) {
-        printf("Invalid arguments\n");
+        fprintf(stderr, "Invalid arguments\n");
         free(employee);
         return;
     }

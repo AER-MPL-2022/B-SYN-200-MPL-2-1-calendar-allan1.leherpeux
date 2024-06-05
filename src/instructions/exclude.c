@@ -14,14 +14,14 @@ void exclude(calendar_t *calendar, char *line)
     int len = get_array_len(array);
 
     if (len < 3) {
-        printf("Invalid arguments\n");
+        fprintf(stderr, "Invalid arguments\n");
         return;
     }
 
     meeting_t *meeting = get_meeting_by_id(calendar->meetings, atoi(array[1]));
 
     if (meeting == NULL) {
-        printf("Meeting not found\n");
+        fprintf(stderr, "Meeting not found\n");
         return;
     }
 

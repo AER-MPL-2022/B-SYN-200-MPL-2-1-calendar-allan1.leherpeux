@@ -45,7 +45,7 @@ void fire(calendar_t *calendar, char *line)
     int len = get_array_len(array);
 
     if (len < 2) {
-        printf("Invalid arguments\n");
+        fprintf(stderr, "Invalid arguments\n");
         return;
     }
 
