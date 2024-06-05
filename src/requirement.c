@@ -2,9 +2,9 @@
 ** EPITECH PROJECT, 2023
 ** B-SYN-200-MPL-2-1-calendar-allan1.leherpeux
 ** File description:
-** requirements.c
+** requirement.c
 */
-#include "requirements.h"
+#include "requirement.h"
 
 void push_back(list_t **begin, void *data)
 {

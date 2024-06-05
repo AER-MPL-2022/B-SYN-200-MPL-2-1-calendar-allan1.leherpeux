@@ -15,8 +15,8 @@ void disp_employees(calendar_t *calendar)
         printf("******************************\n");
         printf("%s %s\n", ((employee_t *)tmp->data)->firstname,
             ((employee_t *)tmp->data)->lastname);
-        printf("Position: %s\n", ((employee_t *)tmp->data)->position);
-        printf("City: %s\n", ((employee_t *)tmp->data)->zip_code);
+        printf("position: %s\n", ((employee_t *)tmp->data)->position);
+        printf("city: %s\n", ((employee_t *)tmp->data)->zip_code);
         for (list_t *meeting = calendar->meetings; meeting != NULL;
             meeting = meeting->next) {
             if (((meeting_t *)meeting->data)->employees->next == NULL)
