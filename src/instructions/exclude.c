@@ -29,7 +29,7 @@ void exclude(calendar_t *calendar, char *line)
         employee_t *employee = get_employee_by_id(calendar->employees, atoi(array[i]));
 
         if (employee == NULL) {
-            printf("Employee not found\n");
+            fprintf(stderr, "Employee not found\n");
             return;
         }
 

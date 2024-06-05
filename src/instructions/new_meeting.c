@@ -28,7 +28,7 @@ void new_meeting(calendar_t *calendar, char *line)
 
     for (list_t *tmp = calendar->meetings; tmp != NULL; tmp = tmp->next) {
         if (((meeting_t *)tmp->data)->id == meeting->id) {
-            printf("Meeting id already exists\n");
+            fprintf(stderr, "Meeting id already exists\n");
             free(meeting);
             return;
         }
@@ -38,14 +38,14 @@ void new_meeting(calendar_t *calendar, char *line)
         tmp = get_employee_by_id(calendar->employees, atoi(array[i]));
 
         if (tmp == NULL) {
-            printf("Employee not found\n");
+            fprintf(stderr, "Employee not found\n");
             free(meeting);
             return;
         }
 
         for (list_t *tmp2 = meeting->employees; tmp2 != NULL; tmp2 = tmp2->next) {
             if (tmp2->data == tmp) {
-                printf("Employee already in the meeting\n");
+                fprintf(stderr, "Employee already in the meeting\n");
                 free(meeting);
                 return;
             }

@@ -20,7 +20,7 @@ void fire_employee(calendar_t *calendar, char *name)
     }
 
     if (tmp == NULL) {
-        printf("Employee not found\n");
+        fprintf(stderr, "Employee not found\n");
         return;
     }
 
