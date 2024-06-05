@@ -21,7 +21,7 @@ void disp_employees(calendar_t *calendar, char **ids)
     list_t *tmp = calendar->employees;
 
     while (tmp != NULL) {
-        if (!check_id(ids, (employee_t *)tmp->data)) {
+        if (ids[2] != NULL && !check_id(ids, (employee_t *)tmp->data)) {
             tmp = tmp->next;
             continue;
         }
