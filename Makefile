@@ -6,7 +6,7 @@
 ##
 
 SRC =	src/main.c \
-		src/requirements.c \
+		src/requirement.c \
 		src/instructions/get_instruction.c \
 		src/tools/str_to_word_array.c \
 		src/instructions/new_employee.c \
