@@ -7,11 +7,24 @@
 #include "instructions.h"
 #include "tools.h"
 
-void disp_employees(calendar_t *calendar)
+bool check_id(char **ids, employee_t *employee)
+{
+    for (int i = 1; ids[i] != NULL; i++) {
+        if (atoi(ids[i]) == employee->id)
+            return true;
+    }
+    return false;
+}
+
+void disp_employees(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
 
     while (tmp != NULL) {
+        if (!check_id(ids, (employee_t *)tmp->data)) {
+            tmp = tmp->next;
+            continue;
+        }
         printf("******************************\n");
         printf("%s %s\n", ((employee_t *)tmp->data)->firstname,
             ((employee_t *)tmp->data)->lastname);

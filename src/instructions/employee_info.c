@@ -73,7 +73,7 @@ bool compare_zip(list_t *employee1, list_t *employee2)
     return true;
 }
 
-void emp_sbn(calendar_t *calendar)
+void emp_sbn(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
     list_t *tmp2 = calendar->employees;
@@ -91,10 +91,10 @@ void emp_sbn(calendar_t *calendar)
         }
         tmp = tmp->next;
     }
-    disp_employees(calendar);
+    disp_employees(calendar, ids);
 }
 
-void emp_sbf(calendar_t *calendar)
+void emp_sbf(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
     list_t *tmp2 = calendar->employees;
@@ -112,10 +112,10 @@ void emp_sbf(calendar_t *calendar)
         }
         tmp = tmp->next;
     }
-    disp_employees(calendar);
+    disp_employees(calendar, ids);
 }
 
-void emp_sbj(calendar_t *calendar)
+void emp_sbj(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
     list_t *tmp2 = calendar->employees;
@@ -135,10 +135,10 @@ void emp_sbj(calendar_t *calendar)
         }
         tmp = tmp->next;
     }
-    disp_employees(calendar);
+    disp_employees(calendar, ids);
 }
 
-void emp_sbz(calendar_t *calendar)
+void emp_sbz(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
     list_t *tmp2 = calendar->employees;
@@ -158,10 +158,10 @@ void emp_sbz(calendar_t *calendar)
         }
         tmp = tmp->next;
     }
-    disp_employees(calendar);
+    disp_employees(calendar, ids);
 }
 
-void emp_sbi(calendar_t *calendar)
+void emp_sbi(calendar_t *calendar, char **ids)
 {
     list_t *tmp = calendar->employees;
     list_t *tmp2 = calendar->employees;
@@ -175,7 +175,7 @@ void emp_sbi(calendar_t *calendar)
         }
         tmp = tmp->next;
     }
-    disp_employees(calendar);
+    disp_employees(calendar, ids);
 }
 
 void info_employee(calendar_t *calendar, char *line)
@@ -187,23 +187,23 @@ void info_employee(calendar_t *calendar, char *line)
         return;
     }
     if (strcmp(array[1], "sortByName") == 0) {
-        emp_sbn(calendar);
+        emp_sbn(calendar, array);
         return;
     }
     if (strcmp(array[1], "sortByForename") == 0) {
-        emp_sbf(calendar);
+        emp_sbf(calendar, array);
         return;
     }
     if (strcmp(array[1], "sortByJob") == 0) {
-        emp_sbj(calendar);
+        emp_sbj(calendar, array);
         return;
     }
     if (strcmp(array[1], "sortByZip") == 0) {
-        emp_sbz(calendar);
+        emp_sbz(calendar, array);
         return;
     }
     if (strcmp(array[1], "sortById") == 0) {
-        emp_sbi(calendar);
+        emp_sbi(calendar, array);
         return;
     }
 

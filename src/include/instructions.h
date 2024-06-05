@@ -21,4 +21,4 @@ void invite(calendar_t *calendar, char *line);
 void exclude(calendar_t *calendar, char *line);
 void fire(calendar_t *calendar, char *line);
 void info_employee(calendar_t *calendar, char *line);
-void disp_employees(calendar_t *calendar);
+void disp_employees(calendar_t *calendar, char **ids);
